@@ -1,5 +1,5 @@
 import { TemplateInterface } from './template.interface';
-import { EmvDto } from './emv.dto';
+import { Emv } from './emv';
 
 export class EmvTemplate implements TemplateInterface {
   protected readonly ECOMMERCE_CHANNEL = '521';
@@ -41,7 +41,7 @@ export class EmvTemplate implements TemplateInterface {
     };
   }
 
-  parse(o: any): EmvDto {
+  parse(o: any): Emv {
     return {
       dynamic: o[62]?.['06'] != this.CLIENT_REQUEST,
       mcc: o[52] || null,

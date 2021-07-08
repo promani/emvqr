@@ -1,5 +1,5 @@
 import { EmvTemplate } from './emv.template';
-import { EmvDto } from './emv.dto';
+import { Emv } from './emv';
 
 export class MpTemplate extends EmvTemplate {
   private readonly REVERSE_DOMAIN = 'COM.MERCADOLIBRE';
@@ -20,7 +20,7 @@ export class MpTemplate extends EmvTemplate {
     return result;
   };
 
-  parse = (o: any): EmvDto => {
+  parse = (o: any): Emv => {
     const result = super.parse(o);
 
     result['reverse_domain'] = this.REVERSE_DOMAIN;

@@ -1,5 +1,5 @@
 import { EmvTemplate } from './emv.template';
-import { EmvDto } from './emv.dto';
+import { Emv } from './emv';
 
 export class GeopagosTemplate extends EmvTemplate {
   private readonly REVERSE_DOMAIN = 'COOP.SIPAGO';
@@ -11,7 +11,7 @@ export class GeopagosTemplate extends EmvTemplate {
     throw new Error('Not implemented yet');
   }
 
-  parse = (o: any): EmvDto => {
+  parse = (o: any): Emv => {
     const result = super.parse(o);
 
     result['reverse_domain'] = this.REVERSE_DOMAIN;

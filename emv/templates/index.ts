@@ -5,11 +5,11 @@ import { SprTemplate } from './spr.template';
 import { FiservTemplate } from './fiserv.template';
 import { GeopagosTemplate } from './geopagos.template';
 
-export default [
-  new EmvTemplate(), //encode available
-  new MpTemplate(), //encode available
-  new TodopagoTemplate(),
-  new SprTemplate(),
-  new FiservTemplate(),
-  new GeopagosTemplate(),
-];
+export default {
+  emv: new EmvTemplate(), //encode available
+  mp: new MpTemplate(), //encode available
+  todopago: new TodopagoTemplate(),
+  spr: new SprTemplate(),
+  fiserv: new FiservTemplate(),
+  geopagos: new GeopagosTemplate(),
+};

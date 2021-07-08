@@ -141,8 +141,7 @@ describe('Encode Qr', () => {
         mcc: '9700',
         merchant_name: 'MERCHANT NAME',
         merchant_city: 'Provincia de Buenos Aires',
-      },
-      new EmvTemplate(),
+      }
     );
 
     expect(qr).toEqual(

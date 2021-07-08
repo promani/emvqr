@@ -1,5 +1,5 @@
 import { EmvTemplate } from './emv.template';
-import { EmvDto } from './emv.dto';
+import { Emv } from './emv';
 
 export class FiservTemplate extends EmvTemplate {
   supports = (o: any): boolean => o[80] || false;
@@ -8,7 +8,7 @@ export class FiservTemplate extends EmvTemplate {
     throw new Error('Not implemented yet');
   }
 
-  parse = (o: any): EmvDto => {
+  parse = (o: any): Emv => {
     const result = super.parse(o);
 
     result['merchant_tax_id'] = o[50]['00'].replace('-', '').replace('-', '');

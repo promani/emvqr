@@ -2,6 +2,17 @@
   "name": "@promani/emvqr",
   "version": "0.0.0",
   "description": "Encode and decode emv qr code specification for payments",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/promani/emvqr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/promani/emvqr/issues"
+  },
+  "homepage": "https://github.com/promani/emvqr#readme",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

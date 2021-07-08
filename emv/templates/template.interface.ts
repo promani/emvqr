@@ -1,7 +1,7 @@
-import { EmvDto } from './emv.dto';
+import { Emv } from './emv';
 
 export interface TemplateInterface {
   supports(o: any): boolean;
   encode(o: any, dynamic?: boolean): any;
-  parse(o: any): EmvDto;
+  parse(o: any): Emv;
 }

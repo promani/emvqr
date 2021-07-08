@@ -1,4 +1,4 @@
-export class EmvDto {
+export class Emv {
   dynamic: boolean;
   mcc: string;
   amount: number;
