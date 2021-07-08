@@ -6,14 +6,18 @@ import {TodopagoTemplate} from "./templates/todopago.template";
 describe('Parse Qr', () => {
   it('Generic Qr', () => {
       const qr =
-          '0002010102125204970053030325802AR5913MERCHANT NAME6025Provincia de Buenos Aires6213100912345678963049218';
+          '00020101021229300012D156000000000510A93FO3230Q31280012D15600000001030812345678520441115802CN5914BEST TRANSPORT6007BEIJING64200002ZH0104最佳运输0202北京540523.7253031565502016233030412340603***0708A60086670902ME91320016A0112233449988770708123456786304A13A';
       const parsed = parse(qr);
       expect(parsed).toEqual(
           expect.objectContaining({
-            merchant_tax_id: '123456789',
-            mcc: '9700',
-            merchant_name: 'MERCHANT NAME',
-            merchant_city: 'Provincia de Buenos Aires',
+            amount: 23.72,
+            customer_label: '***',
+            customer_request: 'ME',
+            mcc: '4111',
+            merchant_city: 'BEIJING',
+            merchant_name: 'BEST TRANSPORT',
+            mobile_number: '1234',
+            terminal_label: 'A6008667',
           }),
       );
   });
