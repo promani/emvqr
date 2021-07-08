@@ -7,9 +7,7 @@ export class SprTemplate extends EmvTemplate {
   supports = (o: any): boolean =>
     o[44]?.['00'].toUpperCase() == this.REVERSE_DOMAIN;
 
-  encode = (o: any): any => {
-    throw new Error('Not implemented yet');
-  }
+  encode = (o: any): any => { throw new Error('Not implemented yet.') }
 
   parse = (o: any): Emv => {
     const result = super.parse(o);

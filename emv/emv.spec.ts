@@ -1,8 +1,29 @@
 import { MpTemplate } from './templates/mp.template';
 import { parse, encode } from '../index';
 import { EmvTemplate } from './templates/emv.template';
+import {TodopagoTemplate} from "./templates/todopago.template";
 
 describe('Parse Qr', () => {
+  it('Generic Qr', () => {
+      const qr =
+          '0002010102125204970053030325802AR5913MERCHANT NAME6025Provincia de Buenos Aires6213100912345678963049218';
+      const parsed = parse(qr);
+      expect(parsed).toEqual(
+          expect.objectContaining({
+            merchant_tax_id: '123456789',
+            mcc: '9700',
+            merchant_name: 'MERCHANT NAME',
+            merchant_city: 'Provincia de Buenos Aires',
+          }),
+      );
+  });
+
+  it('Generic Qr with invalid CRC', () => {
+    const qr =
+      '0002010102125204970053030325802AR5913MERCHANT NAME6025Provincia de Buenos Aires6213100912345678963049217';
+    expect(() => parse(qr)).toThrow('Checksum validation failed.');
+  });
+
   it('Todopago Qr', () => {
     const qr =
       '00020101021144110007com.agr48270012com.todopago0107244083950150011203300443075204970053030325802AR5918Santiago Hernandez6015ALMIRANTE BROWN6304E6D0';
@@ -147,5 +168,22 @@ describe('Encode Qr', () => {
     expect(qr).toEqual(
       '0002010102125204970053030325802AR5913MERCHANT NAME6025Provincia de Buenos Aires6213100912345678963049218',
     );
+  });
+
+  it('Encode Unsupported Qr', () => {
+    try {
+      encode(
+        {
+          merchant_tax_id: '123456789',
+          mcc: '9700',
+          merchant_name: 'MERCHANT NAME',
+          merchant_city: 'Provincia de Buenos Aires',
+        },
+        new TodopagoTemplate()
+      );
+      expect(true).toBe(false);
+    } catch (e) {
+      expect(e.message).toBe("Not implemented yet.");
+    }
   });
 });

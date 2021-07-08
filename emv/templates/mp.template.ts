@@ -17,6 +17,8 @@ export class MpTemplate extends EmvTemplate {
     result[50] = {
       0: o.merchant_tax_id,
     };
+    result[62][10] = null;
+
     return result;
   };
 

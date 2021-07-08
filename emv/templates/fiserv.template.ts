@@ -4,9 +4,7 @@ import { Emv } from './emv';
 export class FiservTemplate extends EmvTemplate {
   supports = (o: any): boolean => o[80] || false;
 
-  encode = (o: any): any => {
-    throw new Error('Not implemented yet');
-  }
+  encode = (o: any): any => { throw new Error('Not implemented yet.') }
 
   parse = (o: any): Emv => {
     const result = super.parse(o);

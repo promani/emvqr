@@ -19,7 +19,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "jest test/ --coverage"
+    "test": "jest --coverage"
   },
   "author": "Ignacio Pehuén Romani",
   "keywords": [

@@ -44,9 +44,9 @@ export class EmvTemplate implements TemplateInterface {
   parse(o: any): Emv {
     return {
       dynamic: o[62]?.['06'] != this.CLIENT_REQUEST,
-      mcc: o[52] || null,
+      mcc: o[52],
       amount: parseFloat(o[54]) || 0,
-      merchant_name: o[59] || null,
+      merchant_name: o[59],
       merchant_city: o[60] || null,
       postal_code: o[61] || null,
       bill_number: o[62]?.['01'] || null,
