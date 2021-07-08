@@ -147,7 +147,7 @@ describe('Encode Qr', () => {
         merchant_city: 'Ciudad Autonoma',
         reference_label: '***',
       },
-      new MpTemplate(),
+      'mp',
     );
 
     expect(qr).toEqual(
