@@ -17,7 +17,7 @@ export function parse(qr: string) {
 }
 
 export function encode(data: unknown, template?: EmvTemplate) {
-  if (!template) template = Object.values(templates)[0];
+  if (!template) template = templates['emv'];
   const result = tlv(template.encode(data)) + CRC_TL;
   return result + computeCRC(result);
 }
