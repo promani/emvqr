@@ -25,9 +25,9 @@ const result = emvqr.decode(example);
 ```
 
 ## How to encode
+```javascript
 const emvqr = require('@promani/emvqr');
 
-```javascript
 const data = {
     account_id: 'fa7070cc-266c-44aa-aa0c-5d9900a99b13',
     merchant_tax_id: '20162475860',

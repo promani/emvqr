@@ -1,6 +1,4 @@
-import { MpTemplate } from './templates/mp.template';
-import { parse, encode } from '../index';
-import { EmvTemplate } from './templates/emv.template';
+import { parse, encode } from './emv';
 import {TodopagoTemplate} from "./templates/todopago.template";
 
 describe('Parse Qr', () => {
