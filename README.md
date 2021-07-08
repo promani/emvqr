@@ -40,6 +40,11 @@ const data = {
 const result = emvqr.encode(data);
 ```
 
+### Result
+```
+00020101021243650016COM.MERCADOLIBRE020130636fa7070cc-266c-44aa-aa0c-5d9900a99b1350150011201624758605204970053030325802AR5921CLAUDIO ARIEL ARONSON6015Ciudad Autonoma62070503***6304FCAA
+```
+
 ## Custom templates
 You can develop a custom QR template extending the class EmvTemplate and overriding the respective properties.
 For example:
@@ -85,9 +90,4 @@ To use your custom template:
 import { OldWalletTemplate } from '../your-path/old-wallet.template';
 
 const result = emvqr.encode(data, new OldWalletTemplate());
-```
-
-### Result
-```
-00020101021243650016COM.MERCADOLIBRE020130636fa7070cc-266c-44aa-aa0c-5d9900a99b1350150011201624758605204970053030325802AR5921CLAUDIO ARIEL ARONSON6015Ciudad Autonoma62070503***6304FCAA
 ```
