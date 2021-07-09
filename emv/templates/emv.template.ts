@@ -62,4 +62,6 @@ export class EmvTemplate implements TemplateInterface {
       merchant_channel: o[62]?.['11'] || null,
     };
   }
+
+  validate = (o: any): boolean => true;
 }
