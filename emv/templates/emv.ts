@@ -1,6 +1,6 @@
 export class Emv {
   dynamic: boolean;
-  reverse_domain: string;
+  reverse_domain?: string;
   mcc: string;
   amount: number;
   merchant_name: string;
