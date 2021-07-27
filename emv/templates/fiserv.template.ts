@@ -9,8 +9,8 @@ export class FiservTemplate extends EmvTemplate {
   parse = (o: any): Emv => {
     const result = super.parse(o);
 
-    result['merchant_tax_id'] = o[50]['00'].replace('-', '').replace('-', '');
-    result['cvu'] = o[51]['00'];
+    result.merchant_tax_id = o[50]['00'].replace('-', '').replace('-', '');
+    result.cvu = o[51]['00'];
 
     return result;
   };

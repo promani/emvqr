@@ -9,13 +9,13 @@ describe('Parse Qr', () => {
       expect(parsed).toEqual(
           expect.objectContaining({
             amount: 23.72,
-            customer_label: '***',
+            customer: '***',
             customer_request: 'ME',
             mcc: '4111',
             merchant_city: 'BEIJING',
             merchant_name: 'BEST TRANSPORT',
             mobile_number: '1234',
-            terminal_label: 'A6008667',
+            terminal: 'A6008667',
           }),
       );
   });
@@ -67,7 +67,7 @@ describe('Parse Qr', () => {
           merchant_name: 'CLAUDIO ARIEL ARONSON',
           mcc: '9700',
           merchant_tax_id: '20162475860',
-          reference_label: '***',
+          reference: '***',
         }),
       );
     });
@@ -138,7 +138,6 @@ describe('Parse Qr', () => {
 });
 
 describe('Encode Qr', () => {
-  // TBD: Remove this test
   it('Mp Qr', () => {
     const qr = encode(
       {

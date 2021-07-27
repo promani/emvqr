@@ -12,8 +12,8 @@ export class TodopagoTemplate extends EmvTemplate {
   parse = (o: any): Emv => {
     const result = super.parse(o);
 
-    result['reverse_domain'] = this.REVERSE_DOMAIN;
-    result['merchant_tax_id'] = o[50]['00'];
+    result.reverse_domain = this.REVERSE_DOMAIN;
+    result.merchant_tax_id = o[50]['00'];
 
     return result;
   };

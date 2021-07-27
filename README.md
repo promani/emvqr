@@ -1,6 +1,11 @@
 # EMVQR
 Javascript library to parse and encode EMV QR codes. Based in [EMVCo Merchant Presented QR Specification v1.1](https://www.emvco.com/terms-of-use/?u=/wp-content/uploads/documents/EMVCo-Merchant-Presented-QR-Specification-v1.1.pdf).
 
+## Installation
+```bash
+npm i @promani/emvqr
+```
+
 ## How to parse
 ```javascript
 const emvqr = require('@promani/emvqr');
@@ -14,13 +19,13 @@ const result = emvqr.decode(example);
 ```javascript
 {
     amount: 23.72,
-    customer_label: '***',
+    customer: '***',
     customer_request: 'ME',
     mcc: '4111',
     merchant_city: 'BEIJING',
     merchant_name: 'BEST TRANSPORT',
     mobile_number: '1234',
-    terminal_label: 'A6008667',
+    terminal: 'A6008667',
 }
 ```
 
@@ -34,7 +39,7 @@ const data = {
     mcc: '9700',
     merchant_name: 'CLAUDIO ARIEL ARONSON',
     merchant_city: 'Ciudad Autonoma',
-    reference_label: '***',
+    reference: '***',
 };
 
 const result = emvqr.encode(data);

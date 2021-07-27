@@ -42,6 +42,7 @@ export class EmvTemplate implements TemplateInterface {
   }
 
   parse(o: any): Emv {
+    this.validate(o);
     return {
       dynamic: o[62]?.['06'] != this.CLIENT_REQUEST,
       mcc: o[52],
@@ -50,12 +51,12 @@ export class EmvTemplate implements TemplateInterface {
       merchant_city: o[60] || null,
       postal_code: o[61] || null,
       bill_number: o[62]?.['01'] || null,
-      store_label: o[62]?.['02'] || null,
+      store: o[62]?.['02'] || null,
       mobile_number: o[62]?.['03'] || null,
       loyalty_number: o[62]?.['04'] || null,
-      reference_label: o[62]?.['05'] || null,
-      customer_label: o[62]?.['06'] || null,
-      terminal_label: o[62]?.['07'] || null,
+      reference: o[62]?.['05'] || null,
+      customer: o[62]?.['06'] || null,
+      terminal: o[62]?.['07'] || null,
       purpose: o[62]?.['08'] || null,
       customer_request: o[62]?.['09'] || null,
       merchant_tax_id: o[62]?.['10'] || null,
